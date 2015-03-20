@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NewsMVVMApp.NewsListPage">
+<ContentPage.ToolbarItems>
+<ToolbarItem Name="Refresh" Icon="Sync.png" Command="{Binding RefreshCommand}"/>
+</ContentPage.ToolbarItems>
+	<ContentPage.Content>
+	<StackLayout>
+	<ListView RowHeight="80" x:Name="listView" ItemsSource="{Binding Articles}" ItemTapped="OnItemTapped">
+	<ListView.ItemTemplate>
+	<DataTemplate>
+	<ViewCell>
+	<Grid>
+	<Grid.ColumnDefinitions>
+	<ColumnDefinition Width="*"/>
+	<ColumnDefinition Width="3*"/>
+	</Grid.ColumnDefinitions>
+
+	<Image Source="placeholder_news.jpg" Grid.Column="0" />
+	<Image Source="{Binding enclosures[0].uri}" Grid.Column="0"/>
+	<Label Text="{Binding title}" Style="{DynamicResource BodyStyle}" Grid.Column="1" LineBreakMode="WordWrap"/>
+
+	</Grid>
+	</ViewCell>
+	</DataTemplate>
+	</ListView.ItemTemplate>
+	</ListView>
+	</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

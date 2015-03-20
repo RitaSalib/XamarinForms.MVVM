@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NewsMVVMApp.NewsItemDetailsPage">
+	<ContentPage.Content>
+	<Grid Padding="10">
+	<Grid.ColumnDefinitions>
+	<ColumnDefinition />
+	<ColumnDefinition />
+	</Grid.ColumnDefinitions>
+	<Grid.RowDefinitions>
+	<RowDefinition Height="Auto"/>
+	<RowDefinition Height="Auto"/>
+	<RowDefinition />
+	</Grid.RowDefinitions>
+
+	<Label Text="{Binding title}" Style="{DynamicResource TitleStyle}" FontSize="Medium" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+	<Image Source="{Binding enclosures[0].uri}" HorizontalOptions="Start" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
+	<Label Text="{Binding summary}" FontSize="Medium" Grid.Row="2" LineBreakMode="WordWrap" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+	</Grid>
+	</ContentPage.Content>
+</ContentPage>
